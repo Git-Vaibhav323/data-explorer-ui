@@ -89,7 +89,11 @@ export function LineChart({ data, title, className }: LineChartProps) {
         callbacks: {
           label: (context: any) => {
             const value = context.parsed.y;
-            return `${context.dataset.label}: $${value.toLocaleString()}`;
+            const datasetLabel = context.dataset.label;
+            if (datasetLabel.includes('Pressure')) {
+              return `${datasetLabel}: ${value.toFixed(1)} bar`;
+            }
+            return `${datasetLabel}: ${value.toLocaleString()}`;
           },
         },
       },
@@ -119,7 +123,6 @@ export function LineChart({ data, title, className }: LineChartProps) {
             family: 'Inter, system-ui, sans-serif',
             size: 11,
           },
-          callback: (value: any) => `$${(value / 1000).toFixed(0)}K`,
         },
       },
     },
