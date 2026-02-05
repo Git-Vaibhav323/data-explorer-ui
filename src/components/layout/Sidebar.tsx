@@ -1,5 +1,5 @@
 import { NavLink } from '@/components/NavLink';
-import { Upload, LayoutDashboard, History, Database, Settings } from 'lucide-react';
+import { Upload, LayoutDashboard, History, FlaskConical, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -15,9 +15,9 @@ export function Sidebar() {
         {/* Logo */}
         <div className="flex h-16 items-center gap-3 border-b border-border px-6">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-            <Database className="h-5 w-5 text-primary-foreground" />
+            <FlaskConical className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-lg font-semibold text-foreground">DataViz</span>
+          <span className="text-lg font-semibold text-foreground">ChemViz</span>
         </div>
 
         {/* Navigation */}

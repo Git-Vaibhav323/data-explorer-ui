@@ -13,9 +13,9 @@ export default function Upload() {
     <Layout>
       <div className="mx-auto max-w-2xl">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-foreground">Upload Dataset</h1>
+          <h1 className="text-3xl font-bold text-foreground">Upload Equipment Data</h1>
           <p className="mt-2 text-muted-foreground">
-            Upload a CSV file to analyze and visualize your data
+            Upload a CSV file containing equipment name, type, flowrate, pressure, and temperature
           </p>
         </div>
         <FileUpload onUpload={handleUpload} />

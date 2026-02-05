@@ -17,8 +17,14 @@ interface DataTableProps {
 
 export function DataTable({ data, columns, className }: DataTableProps) {
   const formatCell = (value: string | number, column: string) => {
-    if (column === 'revenue' && typeof value === 'number') {
-      return `$${value.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+    if (column === 'flowrate' && typeof value === 'number') {
+      return `${value.toLocaleString('en-US', { minimumFractionDigits: 1 })} L/min`;
+    }
+    if (column === 'pressure' && typeof value === 'number') {
+      return `${value.toFixed(1)} bar`;
+    }
+    if (column === 'temperature' && typeof value === 'number') {
+      return `${value.toFixed(1)} °C`;
     }
     return value;
   };
@@ -63,7 +69,7 @@ export function DataTable({ data, columns, className }: DataTableProps) {
                     key={column}
                     className={cn(
                       'text-sm',
-                      column === 'revenue' && 'font-mono font-medium text-primary'
+                      (column === 'flowrate' || column === 'pressure' || column === 'temperature') && 'font-mono font-medium text-primary'
                     )}
                   >
                     {formatCell(row[column], column)}

@@ -63,7 +63,7 @@ export function BarChart({ data, title, className }: BarChartProps) {
         callbacks: {
           label: (context: any) => {
             const value = context.parsed.y;
-            return `Sales: $${value.toLocaleString()}`;
+            return `Count: ${value} units`;
           },
         },
       },
@@ -92,7 +92,6 @@ export function BarChart({ data, title, className }: BarChartProps) {
             family: 'Inter, system-ui, sans-serif',
             size: 11,
           },
-          callback: (value: any) => `$${(value / 1000).toFixed(0)}K`,
         },
       },
     },
